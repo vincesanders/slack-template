@@ -1,0 +1,71 @@
+import {
+  Container,
+  Grid,
+  TextField,
+  Typography,
+} from '@material-ui/core';
+import React, {useState} from 'react';
+
+function Guided() {
+  const [values, setValues] = useState( {
+    title      : '',
+    description: '',
+    trainingKit: '',
+    zoomLink   : '',
+  } );
+
+  const handleChange = ( {target: {name, value}} ) => setValues( {
+    ...values,
+    [name]: value,
+  } );
+
+  return (
+      <Container>
+        <Grid container alignItems='center' direction='column' spacing={2}>
+          <Grid item>
+            <Typography variant="h2" component="h1">Guided Project Slack
+              Message</Typography>
+          </Grid>
+          <Grid item>
+            <Grid item>
+              <Grid container direction='column'>
+                <TextField name="title"
+                           onChange={handleChange}
+                           value={values.title}
+                           label="Title"
+                           variant="filled" />
+                <TextField name="description"
+                           onChange={handleChange}
+                           value={values.description}
+                           label="Description"
+                           variant="filled" />
+                <TextField name="trainingKit"
+                           onChange={handleChange}
+                           value={values.trainingKit}
+                           label="Training Kit Link"
+                           variant="filled" />
+                <TextField name="zoomLink"
+                           onChange={handleChange}
+                           value={values.zoomLink}
+                           label="Zoom Link"
+                           variant="filled" />
+              </Grid>
+            </Grid>
+          </Grid>
+
+          <code>
+            <p>Good evening CSPT8, please take this time and study the training
+              kit on:</p>
+            <br />
+            <p>Topic: <b>{`${values.title}`}</b></p>
+            <p>Subject: <b>{`${values.description}`}</b></p>
+            <p><b>Training Kit Link:</b>{` ${values.trainingKit}`}</p>
+            <br />
+            <p>{`Please join us at the bottom of the hour for the guided project: ${values.zoomLink}`}</p>
+          </code>
+        </Grid>
+      </Container>
+  );
+}
+
+export default Guided;
