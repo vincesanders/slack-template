@@ -51,6 +51,17 @@ function Sprint() {
             minute
             rule and then Team Lead.</p>
         </code>
+        <p>Slack Reminder for Sprints</p>
+        <code>
+          <p>Before you leave, please update your Sprint Challenge Pull Request.</p>
+          <ol>
+            <li>Save your work locally</li>
+            <li>Commit all your changes in Git </li>
+            <li>Push your commits up to GitHub. </li>
+            <li>and fill out a Student Sprint Retrospective: https://forms.lambdaschool.com/sprint-retrospective ...which includes your Pull Request link!</li>
+          </ol>
+          <p>Thank you :slightly_smiling_face:</p>
+        </code>
       </Container>
   );
 }
